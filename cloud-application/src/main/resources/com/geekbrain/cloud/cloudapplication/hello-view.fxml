@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.202-ea"
+      fx:controller="com.geekbrain.cloud.cloudapplication.ChatController">
+
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Exit"/>
+        </Menu>
+        <Menu text="Server">
+            <MenuItem text="Connect to server" onAction="#connectToServerAction"/>
+        </Menu>
+    </MenuBar>
+
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox HBox.hgrow="ALWAYS">
+            <HBox>
+                <ComboBox fx:id="leftDisksBox" onAction="#leftSelectDiskAction"/>
+                <TextField fx:id="leftPathField" editable="false" HBox.hgrow="ALWAYS"/>
+                <Button text="UP" onAction="#leftButtonUpAction"/>
+            </HBox>
+            <TableView fx:id="leftFilesTable" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox HBox.hgrow="ALWAYS">
+            <HBox>
+                <ComboBox fx:id="rightDisksBox"/>
+                <TextField editable="false" HBox.hgrow="ALWAYS"/>
+                <Button text="UP"/>
+            </HBox>
+            <TableView fx:id="rightFilesTable" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+    </HBox>
+
+    <HBox spacing="5">
+        <Button maxWidth="Infinity" focusTraversable="false" text="Copy" HBox.hgrow="ALWAYS"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Move" HBox.hgrow="ALWAYS"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Delete" HBox.hgrow="ALWAYS"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Exit" HBox.hgrow="ALWAYS"/>
+
+        <TextField fx:id="loginField" maxWidth="Infinity" focusTraversable="false"  HBox.hgrow="ALWAYS" promptText="Enter your username"/>
+        <TextField fx:id="passwordField" maxWidth="Infinity" focusTraversable="false"  HBox.hgrow="ALWAYS" promptText="Enter your password"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Connect to server" HBox.hgrow="ALWAYS" onAction="#connectToServerAction"/>
+
+
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+
+    </HBox>
+
+
+</VBox>
